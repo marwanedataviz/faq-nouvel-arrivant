@@ -1,0 +1,36 @@
+name: Mise à jour de la FAQ depuis Grist
+
+on:
+  schedule:
+    - cron: "17 2 * * *"   # chaque nuit vers 3 h (heure de Paris)
+  workflow_dispatch:        # bouton « Run workflow » pour lancer à la main
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Copier les données depuis Grist
+        env:
+          GRIST_API_KEY: ${{ secrets.GRIST_API_KEY }}
+        run: python scripts/fetch_grist.py
+
+      - name: Enregistrer si quelque chose a changé
+        run: |
+          if git diff --quiet -I '"mis_a_jour"' -- data.json; then
+            echo "Aucun changement dans le Grist."
+            exit 0
+          fi
+          git config user.name "faq-bot"
+          git config user.email "faq-bot@users.noreply.github.com"
+          git add data.json
+          git commit -m "Mise à jour de la FAQ depuis Grist"
+          git push
