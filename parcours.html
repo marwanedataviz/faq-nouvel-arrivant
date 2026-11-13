@@ -32,6 +32,40 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
     radial-gradient(40vw 40vw at 90% 88%, rgba(199,21,83,.16), transparent 70%),
     radial-gradient(36vw 36vw at 4% 78%, rgba(46,172,104,.20), transparent 70%),
     #fff; }
+/* ---------- Variante « gris nuage » : fond gris clair nuageux, gros points, logo nu en haut à droite ---------- */
+html.theme-gris { --fond: #F3F4F6; --trait: #DADDE2; --gris: #5B6270; }
+html.theme-gris body::before {
+  background:
+    radial-gradient(circle, rgba(110,118,130,.34) 1.6px, transparent 2px) 27px 27px / 54px 54px,
+    radial-gradient(30vw 22vw at 15% 20%, rgba(255,255,255,.9), transparent 70%),
+    radial-gradient(28vw 20vw at 70% 12%, rgba(226,229,233,.9), transparent 70%),
+    radial-gradient(34vw 24vw at 45% 55%, rgba(255,255,255,.85), transparent 70%),
+    radial-gradient(30vw 22vw at 88% 70%, rgba(228,231,235,.95), transparent 70%),
+    radial-gradient(32vw 22vw at 20% 85%, rgba(232,234,238,.9), transparent 70%),
+    #F2F3F5; }
+html.theme-gris .top .bar { flex-direction: row-reverse; }
+html.theme-gris .logo { background: none; box-shadow: none; padding: 0; }
+html.theme-gris .logo img { height: 50px; }
+html.theme-gris .top .dsn { color: var(--gris); }
+html.theme-gris .hero h1 .outline { color: #F3F4F6;
+  text-shadow: 2px 0 0 var(--nuit), -2px 0 0 var(--nuit), 0 2px 0 var(--nuit), 0 -2px 0 var(--nuit),
+               1.5px 1.5px 0 var(--nuit), -1.5px -1.5px 0 var(--nuit), 1.5px -1.5px 0 var(--nuit), -1.5px 1.5px 0 var(--nuit); }
+html.theme-gris .hero h1 .full { color: var(--nuit); }
+html.theme-gris .how { border-top-color: var(--trait); }
+html.theme-gris .how .ic { border-color: var(--nuit); background: #fff; }
+html.theme-gris .search input { border-color: var(--nuit); background: #fff; box-shadow: 0 10px 30px rgba(0,42,67,.08), 0 0 0 1px rgba(0,42,67,.04); }
+html.theme-gris .search input:focus { transform: none; box-shadow: 0 0 0 4px rgba(0,99,175,.18); border-color: var(--bleu-aphp); }
+html.theme-gris .journey-title h2 { color: var(--nuit); }
+html.theme-gris .base { stroke: #AEB4BD; }
+html.theme-gris .node { background: #fff; box-shadow: 0 0 0 3px var(--c), 0 14px 28px rgba(0,42,67,.14); }
+html.theme-gris .node:hover, html.theme-gris .node:focus-visible { box-shadow: 0 0 0 3px var(--c), 0 18px 34px rgba(0,42,67,.18), 0 0 0 10px var(--ct); }
+html.theme-gris .endpoint.finish .flag { background: #fff; }
+html.theme-gris .overall { border-color: transparent; box-shadow: 0 8px 24px rgba(0,42,67,.15); }
+html.theme-gris .q, html.theme-gris .tab { border-color: #E3E6EA; }
+html.theme-gris .panel { background: #F7F8FA; }
+html.theme-gris .panel footer { background: #EEF0F3; }
+html.theme-gris .panel .list .q { box-shadow: 0 2px 8px rgba(0,42,67,.05); }
+
 /* ---------- Variante « bleu ciel » ---------- */
 html.theme-ciel { --fond: #EAF4FC; --trait: #CFE0F0; }
 html.theme-ciel body::before {
@@ -477,6 +511,14 @@ footer.page { text-align: center; font-size: .8rem; color: var(--gris); padding:
     if (!geom || !samples.length) return;
     var rect = journey.getBoundingClientRect();
     var targetY = window.innerHeight * 0.58 - rect.top;
+    // En approchant du bas de la page, on accélère pour que le chemin se termine toujours jusqu'au drapeau
+    var doc = document.documentElement, maxScroll = Math.max(0, doc.scrollHeight - window.innerHeight);
+    var remaining = maxScroll - window.scrollY, zone = window.innerHeight * 0.9;
+    var endY = geom.pts[geom.pts.length - 1].y + 5;
+    if (remaining < zone && targetY < endY) {
+      var t = Math.min(1, Math.max(0, 1 - remaining / zone));
+      targetY = targetY + (endY - targetY) * t;
+    }
     var len;
     if (reduced) { len = geom.L; } else {
       var best = 0;
