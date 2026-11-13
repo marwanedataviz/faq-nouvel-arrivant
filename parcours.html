@@ -33,21 +33,20 @@ body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-even
     radial-gradient(36vw 36vw at 4% 78%, rgba(46,172,104,.20), transparent 70%),
     #fff; }
 /* ---------- Variante « gris nuage » : fond gris clair nuageux, gros points, logo nu en haut à droite ---------- */
-html.theme-gris { --fond: #F3F4F6; --trait: #DADDE2; --gris: #5B6270; }
+html.theme-gris { --fond: #F8F9FC; --trait: #DADDE2; --gris: #5B6270; }
 html.theme-gris body::before {
   background:
-    radial-gradient(circle, rgba(110,118,130,.34) 1.6px, transparent 2px) 27px 27px / 54px 54px,
+    radial-gradient(circle, #D0D6E6 1.8px, transparent 2.2px) 27px 27px / 54px 54px,
     radial-gradient(30vw 22vw at 15% 20%, rgba(255,255,255,.9), transparent 70%),
-    radial-gradient(28vw 20vw at 70% 12%, rgba(226,229,233,.9), transparent 70%),
-    radial-gradient(34vw 24vw at 45% 55%, rgba(255,255,255,.85), transparent 70%),
-    radial-gradient(30vw 22vw at 88% 70%, rgba(228,231,235,.95), transparent 70%),
-    radial-gradient(32vw 22vw at 20% 85%, rgba(232,234,238,.9), transparent 70%),
-    #F2F3F5; }
+    radial-gradient(28vw 20vw at 70% 12%, rgba(238,241,247,.9), transparent 70%),
+    radial-gradient(34vw 24vw at 45% 55%, rgba(255,255,255,.8), transparent 70%),
+    radial-gradient(30vw 22vw at 88% 70%, rgba(239,242,248,.9), transparent 70%),
+    #F8F9FC; }
 html.theme-gris .top .bar { flex-direction: row-reverse; }
 html.theme-gris .logo { background: none; box-shadow: none; padding: 0; }
 html.theme-gris .logo img { height: 50px; }
 html.theme-gris .top .dsn { color: var(--gris); }
-html.theme-gris .hero h1 .outline { color: #F3F4F6;
+html.theme-gris .hero h1 .outline { color: #F8F9FC;
   text-shadow: 2px 0 0 var(--nuit), -2px 0 0 var(--nuit), 0 2px 0 var(--nuit), 0 -2px 0 var(--nuit),
                1.5px 1.5px 0 var(--nuit), -1.5px -1.5px 0 var(--nuit), 1.5px -1.5px 0 var(--nuit), -1.5px 1.5px 0 var(--nuit); }
 html.theme-gris .hero h1 .full { color: var(--nuit); }
