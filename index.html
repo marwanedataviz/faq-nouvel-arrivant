@@ -19,11 +19,13 @@
   * { box-sizing: border-box; }
   body { margin: 0; font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
          color: var(--texte); background: var(--fond); line-height: 1.55; }
-  header { background: var(--bleu); color: #fff; padding: 40px 20px 72px; position: relative; overflow: hidden; }
+  header { background: var(--bleu); color: #fff; padding: 28px 20px 72px; position: relative; overflow: hidden; }
   header::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 8px;
     background: linear-gradient(90deg, #90B826 0 14.28%, #2EAC68 0 28.57%, #007893 0 42.85%, #54B3C1 0 57.14%,
                 #C71553 0 71.42%, #F4A800 0 85.71%, #0063AF 0); }
-  header .bubbles { position: absolute; right: -40px; top: -30px; width: 300px; height: 220px; opacity: .9; pointer-events: none; }
+  header .logo { display: inline-block; background: #fff; border-radius: 10px; padding: 10px 16px; margin-bottom: 22px;
+                  box-shadow: 0 2px 10px rgba(0,0,0,.15); }
+  header .logo img { display: block; height: 44px; width: auto; }
   header .wrap { position: relative; }
   .wrap { max-width: 860px; margin: 0 auto; }
   header p.kicker { margin: 0 0 6px; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; opacity: .8; }
@@ -85,21 +87,15 @@
                    text-align: center; color: var(--gris); margin-top: 24px; }
   footer { text-align: center; font-size: .8rem; color: var(--gris); padding: 0 20px 32px; }
   mark { background: #F9D3E2; color: var(--fuchsia); padding: 0 2px; border-radius: 3px; }
-  @media (max-width: 1080px) { header .bubbles { display: none; } }
+  @media (max-width: 560px) { header .logo img { height: 32px; } }
   @media (max-width: 560px) { summary .tag { display: none; } .body { padding-left: 16px; } }
 </style>
 </head>
 <body>
 <header>
-  <svg class="bubbles" viewBox="0 0 300 220" aria-hidden="true">
-    <circle cx="210" cy="80" r="70" fill="#0063AF" opacity=".55"/>
-    <circle cx="110" cy="40" r="34" fill="#2EAC68" opacity=".8"/>
-    <circle cx="150" cy="150" r="22" fill="#F4A800" opacity=".9"/>
-    <circle cx="260" cy="185" r="26" fill="#C71553" opacity=".85"/>
-    <circle cx="70" cy="120" r="12" fill="#54B3C1"/>
-  </svg>
   <div class="wrap">
-    <p class="kicker">AP-HP · Direction des Services Numériques</p>
+    <div class="logo"><img src="logo-aphp.png" alt="Assistance Publique – Hôpitaux de Paris" width="900" height="176"></div>
+    <p class="kicker">Direction des Services Numériques</p>
     <h1><em>Bienvenue !</em> Tout ce qu'il faut savoir pour votre arrivée</h1>
     <p class="intro">Les questions que se posent les nouveaux arrivants, rangées dans l'ordre où vous en aurez besoin, avec les ressources pour y répondre.</p>
   </div>
