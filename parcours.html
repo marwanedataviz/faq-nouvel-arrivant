@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Votre arrivée, pas à pas – DSN AP-HP</title>
+<script>
+  // Variante de couleur choisie par le lien : parcours.html?theme=ciel
+  (function () { var m = /[?&]theme=([a-z]+)/.exec(location.search); if (m) document.documentElement.className += ' theme-' + m[1]; })();
+</script>
 <style>
 @font-face { font-family: "Montserrat"; font-weight: 400; font-display: swap; src: url(fonts/montserrat-latin-400-normal.woff2) format("woff2"); }
 @font-face { font-family: "Montserrat"; font-weight: 500; font-display: swap; src: url(fonts/montserrat-latin-500-normal.woff2) format("woff2"); }
@@ -12,15 +16,34 @@
 
 :root {
   --bleu: #153D8A; --bleu-aphp: #0063AF; --nuit: #002A43; --bleu-clair: #E5EEF7;
-  --beige: #F4E4D9; --fond: #FBF6F2; --papier: #FFFDFB; --trait: #E3D6CB; --gris: #5A6372;
+  --beige: #F4E4D9; --fond: #ffffff; --papier: #ffffff; --trait: #DCE3EE; --gris: #5A6372;
   --fuchsia: #B90D63; --orange: #D93F0A;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Arial, sans-serif; color: var(--nuit);
-       background-color: var(--fond); line-height: 1.5; overflow-x: hidden;
-       background-image: radial-gradient(circle, rgba(21,61,138,.10) 1px, transparent 1.4px);
-       background-size: 28px 28px; }
+       background-color: #fff; line-height: 1.5; overflow-x: hidden; position: relative; }
+/* Fond : blanc lumineux + grandes taches de couleur douces de la charte + quadrillage de points */
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(circle, rgba(0,99,175,.13) 1.2px, transparent 1.6px) 0 0 / 26px 26px,
+    radial-gradient(38vw 38vw at 6% 8%, rgba(84,179,193,.28), transparent 70%),
+    radial-gradient(34vw 34vw at 96% 22%, rgba(244,168,0,.24), transparent 70%),
+    radial-gradient(40vw 40vw at 90% 88%, rgba(199,21,83,.16), transparent 70%),
+    radial-gradient(36vw 36vw at 4% 78%, rgba(46,172,104,.20), transparent 70%),
+    #fff; }
+/* ---------- Variante « bleu ciel » ---------- */
+html.theme-ciel { --fond: #EAF4FC; --trait: #CFE0F0; }
+html.theme-ciel body::before {
+  background:
+    radial-gradient(circle, rgba(21,61,138,.13) 1.2px, transparent 1.6px) 0 0 / 26px 26px,
+    radial-gradient(55vw 45vw at 88% 6%, rgba(255,255,255,.85), transparent 70%),
+    radial-gradient(45vw 40vw at 8% 60%, rgba(255,255,255,.55), transparent 70%),
+    linear-gradient(180deg, #D7EBFA 0%, #E6F2FC 45%, #DDF0F6 100%); }
+html.theme-ciel .base { stroke: #9FB6D6; }
+html.theme-ciel .node, html.theme-ciel .endpoint.finish .flag, html.theme-ciel .search input { background: #fff; }
+html.theme-ciel .how { border-top-color: #BFD6EC; }
+html.theme-ciel .how div { border-left-color: #BFD6EC; }
 button { font: inherit; color: inherit; }
 .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -35,7 +58,7 @@ button { font: inherit; color: inherit; }
 /* ---------- En-tête ---------- */
 .top { padding: 26px 0 0; }
 .top .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-.logo { background: #fff; border-radius: 12px; padding: 9px 14px; box-shadow: 0 2px 10px rgba(21,61,138,.08); display: inline-block; }
+.logo { background: #fff; border-radius: 12px; padding: 9px 14px; box-shadow: 0 4px 16px rgba(21,61,138,.12); display: inline-block; }
 .logo img { height: 40px; width: auto; display: block; }
 .top .dsn { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--bleu); font-weight: 600; }
 
@@ -75,7 +98,7 @@ mark { background: #F8D2E2; color: var(--fuchsia); border-radius: 3px; padding: 
 .journey-title p { margin: 0; color: var(--gris); font-size: .9rem; }
 .journey { position: relative; margin: 8px 0 40px; }
 .journey svg.path { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
-.base { fill: none; stroke: #CDBFB3; stroke-width: 3; stroke-dasharray: 2 11; stroke-linecap: round; }
+.base { fill: none; stroke: #B9C6DC; stroke-width: 3; stroke-dasharray: 2 11; stroke-linecap: round; }
 .ink { fill: none; stroke-width: 4.5; stroke-dasharray: 12 9; stroke-linecap: round; }
 .deco { fill: none; stroke: #C71553; stroke-width: 2; stroke-dasharray: 5 6; opacity: .55; }
 .plane { fill: none; stroke: #9AA9D6; stroke-width: 1.5; stroke-linejoin: round; }
@@ -175,7 +198,7 @@ a.res:hover { border-style: solid; border-color: var(--bleu-aphp); background: v
 .res .ry { font-size: .72rem; color: var(--gris); }
 .avenir { display: inline-block; margin-top: 4px; font-size: .8rem; font-weight: 600; color: #A33006; background: #FDEBDD; border-radius: 999px; padding: 4px 12px; }
 .contacts { font-size: .82rem; color: var(--gris); margin: 10px 0 0; }
-.panel footer { display: flex; justify-content: space-between; gap: 10px; padding: 14px 22px; border-top: 1px solid var(--trait); background: var(--fond); flex: none; }
+.panel footer { display: flex; justify-content: space-between; gap: 10px; padding: 14px 22px; border-top: 1px solid var(--trait); background: #F5F8FC; flex: none; }
 .btn { border: 2px solid var(--nuit); background: #fff; border-radius: 999px; padding: 9px 16px; font-weight: 600; font-size: .85rem; cursor: pointer; }
 .btn:hover { background: var(--nuit); color: #fff; }
 .btn[hidden] { display: none; }
@@ -580,7 +603,7 @@ footer.page { text-align: center; font-size: .8rem; color: var(--gris); padding:
   function refreshProgress() {
     var total = data.questions.length, read = data.questions.filter(function (q) { return readSet[qid(q)]; }).length;
     var C = 2 * Math.PI * 15;
-    $('overall').innerHTML = '<svg width="38" height="38" viewBox="0 0 38 38"><circle cx="19" cy="19" r="15" fill="none" stroke="#E3D6CB" stroke-width="5"/>' +
+    $('overall').innerHTML = '<svg width="38" height="38" viewBox="0 0 38 38"><circle cx="19" cy="19" r="15" fill="none" stroke="#DCE3EE" stroke-width="5"/>' +
       '<circle cx="19" cy="19" r="15" fill="none" stroke="#C71553" stroke-width="5" stroke-linecap="round" stroke-dasharray="' + C.toFixed(1) + '" stroke-dashoffset="' + (C * (1 - read / (total || 1))).toFixed(1) + '" transform="rotate(-90 19 19)"/></svg>' +
       '<span>Votre progression : ' + read + ' / ' + total + '</span>' + (read ? '<button class="reset" id="reset">remettre à zéro</button>' : '');
     var r = $('reset'); if (r) r.onclick = function () { if (confirm('Tout décocher ?')) { readSet = {}; saveRead(); refreshProgress(); } };
