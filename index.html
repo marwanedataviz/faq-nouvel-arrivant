@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bienvenue à la DSN – FAQ du nouvel arrivant</title>
+<style>
+  @font-face { font-family: "Montserrat"; font-weight: 400; font-display: swap; src: url(fonts/montserrat-latin-400-normal.woff2) format("woff2"); }
+  @font-face { font-family: "Montserrat"; font-weight: 500; font-display: swap; src: url(fonts/montserrat-latin-500-normal.woff2) format("woff2"); }
+  @font-face { font-family: "Montserrat"; font-weight: 600; font-display: swap; src: url(fonts/montserrat-latin-600-normal.woff2) format("woff2"); }
+  @font-face { font-family: "Montserrat"; font-weight: 700; font-display: swap; src: url(fonts/montserrat-latin-700-normal.woff2) format("woff2"); }
+  /* Charte AP-HP : gamme principale, secondaire et GHU */
+  :root {
+    --bleu: #153D8A; --bleu-aphp: #0063AF; --bleu-nuit: #002A43; --bleu-clair: #E5EEF7;
+    --beige: #F4E4D9; --fuchsia: #B90D63;
+    --texte: #002A43; --gris: #4F5B6B; --bord: #E6DCD3; --fond: #FBF6F2; --blanc: #fff;
+    --orange: #D93F0A; --orange-fond: #FDEBDD;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+         color: var(--texte); background: var(--fond); line-height: 1.55; }
+  header { background: var(--bleu); color: #fff; padding: 40px 20px 72px; position: relative; overflow: hidden; }
+  header::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 8px;
+    background: linear-gradient(90deg, #90B826 0 14.28%, #2EAC68 0 28.57%, #007893 0 42.85%, #54B3C1 0 57.14%,
+                #C71553 0 71.42%, #F4A800 0 85.71%, #0063AF 0); }
+  header .bubbles { position: absolute; right: -40px; top: -30px; width: 300px; height: 220px; opacity: .9; pointer-events: none; }
+  header .wrap { position: relative; }
+  .wrap { max-width: 860px; margin: 0 auto; }
+  header p.kicker { margin: 0 0 6px; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; opacity: .8; }
+  header h1 { margin: 0 0 10px; max-width: 640px; font-size: clamp(1.6rem, 4vw, 2.3rem); line-height: 1.2; font-weight: 700; }
+  header h1 em { font-style: normal; color: var(--beige); }
+  header p.intro { margin: 0; max-width: 620px; opacity: .92; }
+  .search { margin: -36px auto 0; position: relative; }
+  .search input { font: inherit; width: 100%; padding: 16px 18px 16px 48px; font-size: 1rem; border: 1px solid var(--bord);
+                  border-radius: 10px; background: var(--blanc); box-shadow: 0 4px 16px rgba(20,40,80,.10); }
+  .search input:focus { outline: 3px solid #9db7e3; outline-offset: 1px; }
+  .search svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--gris); }
+  nav.steps { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 6px; }
+  /* Une couleur GHU par moment du parcours (--c : couleur vive, --cd : version foncée pour le texte) */
+  .s1 { --c: #2EAC68; --cd: #09742B; }
+  .s2 { --c: #F4A800; --cd: #A33006; }
+  .s3 { --c: #54B3C1; --cd: #1C7E92; }
+  .s4 { --c: #C71553; --cd: #B90D63; }
+  .s5 { --c: #90B826; --cd: #518906; }
+  nav.steps a { text-decoration: none; color: var(--cd); background: color-mix(in srgb, var(--c) 16%, white);
+                border: 1px solid color-mix(in srgb, var(--c) 45%, white);
+                padding: 6px 14px; border-radius: 999px; font-size: .88rem; font-weight: 600; }
+  nav.steps a:hover { background: color-mix(in srgb, var(--c) 30%, white); }
+  nav.steps a .n { display: inline-block; margin-left: 6px; background: var(--cd); color: #fff; border-radius: 999px;
+                   padding: 0 7px; font-size: .75rem; }
+  main { padding: 0 20px 48px; }
+  section.step { margin-top: 34px; scroll-margin-top: 16px; }
+  section.step h2 { font-size: 1.3rem; margin: 0 0 14px; display: flex; align-items: center; gap: 12px; color: var(--cd); font-weight: 700; }
+  section.step h2 .num { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+                         background: var(--c); color: var(--bleu-nuit); font-size: .95rem; flex: none;
+                         box-shadow: 0 0 0 4px color-mix(in srgb, var(--c) 25%, white); }
+  section.step h2 .count { font-size: .8rem; font-weight: 500; color: var(--gris); }
+  details { background: var(--blanc); border: 1px solid var(--bord); border-left: 5px solid var(--c);
+            border-radius: 10px; margin-bottom: 8px; transition: box-shadow .15s; }
+  details:hover { box-shadow: 0 2px 10px rgba(21,61,138,.08); }
+  details[open] { border-color: color-mix(in srgb, var(--c) 55%, white); border-left-color: var(--c);
+                  box-shadow: 0 4px 16px rgba(21,61,138,.10); }
+  summary { cursor: pointer; padding: 14px 16px; list-style: none; display: flex; gap: 12px; align-items: flex-start; }
+  summary::-webkit-details-marker { display: none; }
+  summary .chev { flex: none; margin-top: 3px; transition: transform .15s; color: var(--gris); }
+  details[open] summary .chev { transform: rotate(90deg); }
+  summary .q { font-weight: 600; flex: 1; }
+  summary .q { color: var(--bleu); }
+  summary .tag { flex: none; font-size: .72rem; font-weight: 500; color: var(--bleu); background: var(--bleu-clair);
+                 border-radius: 999px; padding: 2px 10px; margin-top: 2px; white-space: nowrap; }
+  .body { padding: 0 16px 14px 44px; }
+  .res { display: block; padding: 10px 14px; border: 1px solid var(--bord); border-radius: 8px; margin-top: 8px;
+         text-decoration: none; color: inherit; background: #fff; }
+  a.res:hover { border-color: var(--bleu-aphp); background: var(--bleu-clair); }
+  a.res:focus-visible, summary:focus-visible, nav.steps a:focus-visible { outline: 3px solid var(--bleu-aphp); outline-offset: 2px; }
+  .res .t { color: var(--bleu-aphp); font-weight: 600; }
+  a.res .t::after { content: " ↗"; font-weight: 400; }
+  .res .d { display: block; font-size: .9rem; color: var(--gris); }
+  .res .ty { display: block; font-size: .75rem; color: var(--gris); margin-top: 2px; }
+  .avenir { display: inline-block; margin-top: 4px; font-size: .85rem; font-weight: 500; color: #A33006; background: var(--orange-fond);
+            border-radius: 999px; padding: 4px 12px; }
+  .contacts { font-size: .9rem; margin-top: 10px; color: var(--gris); }
+  .contacts b { color: var(--texte); }
+  .empty, .error { background: var(--blanc); border: 1px dashed var(--bord); border-radius: 10px; padding: 24px;
+                   text-align: center; color: var(--gris); margin-top: 24px; }
+  footer { text-align: center; font-size: .8rem; color: var(--gris); padding: 0 20px 32px; }
+  mark { background: #F9D3E2; color: var(--fuchsia); padding: 0 2px; border-radius: 3px; }
+  @media (max-width: 1080px) { header .bubbles { display: none; } }
+  @media (max-width: 560px) { summary .tag { display: none; } .body { padding-left: 16px; } }
+</style>
+</head>
+<body>
+<header>
+  <svg class="bubbles" viewBox="0 0 300 220" aria-hidden="true">
+    <circle cx="210" cy="80" r="70" fill="#0063AF" opacity=".55"/>
+    <circle cx="110" cy="40" r="34" fill="#2EAC68" opacity=".8"/>
+    <circle cx="150" cy="150" r="22" fill="#F4A800" opacity=".9"/>
+    <circle cx="260" cy="185" r="26" fill="#C71553" opacity=".85"/>
+    <circle cx="70" cy="120" r="12" fill="#54B3C1"/>
+  </svg>
+  <div class="wrap">
+    <p class="kicker">AP-HP · Direction des Services Numériques</p>
+    <h1><em>Bienvenue !</em> Tout ce qu'il faut savoir pour votre arrivée</h1>
+    <p class="intro">Les questions que se posent les nouveaux arrivants, rangées dans l'ordre où vous en aurez besoin, avec les ressources pour y répondre.</p>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="search">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Rechercher : congés, Teams, fiche de paie…" aria-label="Rechercher une question">
+    </div>
+    <nav class="steps" id="steps" aria-label="Moments du parcours"></nav>
+    <div id="faq"><p class="empty">Chargement…</p></div>
+  </div>
+</main>
+
+<footer id="foot"></footer>
+
+<script>
+(function () {
+  var data = null;
+  var faq = document.getElementById('faq');
+  var stepsNav = document.getElementById('steps');
+  var input = document.getElementById('q');
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function fold(s) { return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
+  function slug(s) { return 'etape-' + fold(s).replace(/[^a-z0-9]+/g, '-'); }
+  function safeUrl(u) { return /^https?:\/\//i.test(u || '') ? u : ''; }
+  function highlight(text, terms) {
+    var out = esc(text);
+    if (!terms.length) return out;
+    // surlignage insensible aux accents : on travaille sur la version « pliée »
+    var folded = fold(text), marks = [];
+    terms.forEach(function (t) {
+      var i = folded.indexOf(t);
+      while (t && i !== -1) { marks.push([i, i + t.length]); i = folded.indexOf(t, i + t.length); }
+    });
+    if (!marks.length) return out;
+    marks.sort(function (a, b) { return a[0] - b[0]; });
+    var res = '', pos = 0;
+    marks.forEach(function (m) {
+      if (m[0] < pos) return;
+      res += esc(text.slice(pos, m[0])) + '<mark>' + esc(text.slice(m[0], m[1])) + '</mark>';
+      pos = m[1];
+    });
+    return res + esc(text.slice(pos));
+  }
+  function haystack(q) {
+    return fold([q.titre, q.theme, (q.interlocuteurs || []).join(' ')].concat(
+      (q.ressources || []).map(function (r) { return r.titre + ' ' + r.description; })).join(' '));
+  }
+
+  function render() {
+    var terms = fold(input.value).split(/\s+/).filter(Boolean);
+    var html = '', nav = '', shown = 0;
+    data.etapes.forEach(function (etape, idx) {
+      var items = data.questions.filter(function (q) {
+        if (q.etape !== etape) return false;
+        var h = haystack(q);
+        return terms.every(function (t) { return h.indexOf(t) !== -1; });
+      });
+      if (!items.length) return;
+      shown += items.length;
+      var cls = 's' + (idx % 5 + 1);
+      nav += '<a class="' + cls + '" href="#' + slug(etape) + '">' + esc(etape) + '<span class="n">' + items.length + '</span></a>';
+      html += '<section class="step ' + cls + '" id="' + slug(etape) + '"><h2><span class="num">' + (idx + 1) + '</span>' + esc(etape) +
+        '<span class="count">' + items.length + ' question' + (items.length > 1 ? 's' : '') + '</span></h2>';
+      items.forEach(function (q) {
+        html += '<details' + (terms.length ? ' open' : '') + '><summary>' +
+          '<svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>' +
+          '<span class="q">' + highlight(q.titre, terms) + '</span>' +
+          (q.theme ? '<span class="tag">' + esc(q.theme) + '</span>' : '') +
+          '</summary><div class="body">';
+        var res = (q.ressources || []).filter(function (r) { return r.titre; });
+        if (res.length) {
+          res.forEach(function (r) {
+            var url = safeUrl(r.url);
+            var inner = '<span class="t">' + highlight(r.titre, terms) + '</span>' +
+              (r.description ? '<span class="d">' + highlight(r.description, terms) + '</span>' : '') +
+              (r.type ? '<span class="ty">' + esc(r.type) + '</span>' : '');
+            html += url
+              ? '<a class="res" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + inner + '</a>'
+              : '<div class="res">' + inner + '</div>';
+          });
+        } else {
+          html += '<span class="avenir">Ressource à venir</span>';
+        }
+        if ((q.interlocuteurs || []).length) {
+          html += '<p class="contacts"><b>Qui contacter :</b> ' + q.interlocuteurs.map(esc).join(', ') + '</p>';
+        }
+        html += '</div></details>';
+      });
+      html += '</section>';
+    });
+    stepsNav.innerHTML = nav;
+    faq.innerHTML = shown ? html : '<p class="empty">Aucune question ne correspond à « ' + esc(input.value) + ' ».</p>';
+  }
+
+  fetch('data.json', { cache: 'no-store' })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (d) {
+      data = d;
+      render();
+      input.addEventListener('input', render);
+      if (d.mis_a_jour) {
+        var dt = new Date(d.mis_a_jour);
+        document.getElementById('foot').textContent = 'Contenu mis à jour le ' +
+          dt.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }) +
+          ' · Une question manque ? Signalez-la à la cellule RH – DSN.';
+      }
+    })
+    .catch(function () {
+      faq.innerHTML = '<p class="error">La FAQ n\'a pas pu être chargée. Réessayez dans quelques instants.</p>';
+    });
+})();
+</script>
+</body>
+</html>

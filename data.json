@@ -1,0 +1,369 @@
+{
+  "mis_a_jour": "2026-11-13T15:57:36+00:00",
+  "etapes": [
+    "Premier jour",
+    "Première semaine",
+    "Premier mois",
+    "Première année"
+  ],
+  "questions": [
+    {
+      "titre": "Comprendre l'organisation de la DSN",
+      "etape": "Premier jour",
+      "theme": "Intégrer la DSN",
+      "interlocuteurs": [],
+      "ressources": [
+        {
+          "titre": "Organigrammes DSN",
+          "description": "Visualiser les organigrammes des équipes DSN",
+          "type": "Lien vers teams",
+          "url": "https://365aphp.sharepoint.com/sites/DSI-Communication2/Documents%20partages/General/01%20GOUVERNANCE/ORGANIGRAMMES"
+        }
+      ]
+    },
+    {
+      "titre": "Qui solliciter en cas de question ?",
+      "etape": "Premier jour",
+      "theme": "Ressources humaines (RH)",
+      "interlocuteurs": [],
+      "ressources": []
+    },
+    {
+      "titre": "Comment contacter le support Informatique ?",
+      "etape": "Premier jour",
+      "theme": "Outils numériques",
+      "interlocuteurs": [],
+      "ressources": [
+        {
+          "titre": "SMAX",
+          "description": "Portail de gestion des demandes de supports (via ticket)",
+          "type": "Lien vers APHP-PRO",
+          "url": "https://smax.aphp.fr/homepage"
+        }
+      ]
+    },
+    {
+      "titre": "Ai-je droit au télétravail ?",
+      "etape": "Premier mois",
+      "theme": "Ressources humaines (RH)",
+      "interlocuteurs": [],
+      "ressources": [
+        {
+          "titre": "Livret d'accueil",
+          "description": "Document général contenant : Bienvenue / Les différents statuts dans la fonction publique / Les droits et obligations",
+          "type": "Document PDF",
+          "url": "https://aphp-pro.aphp.fr/Siege/La%20direction%20des%20ressources%20du%20sige/Accueil%20des%20nouveaux%20arrivants/Livret"
+        }
+      ]
+    },
+    {
+      "titre": "Comment je pose mes congés ?",
+      "etape": "Premier mois",
+      "theme": "Gestion des congés",
+      "interlocuteurs": [],
+      "ressources": [
+        {
+          "titre": "Présentation Gestime",
+          "description": "Comprendre Gestime",
+          "type": "Lien vers sharepoint",
+          "url": "https://365aphp.sharepoint.com/sites/NouveauxarrivantsDSN/_layouts/15/guestaccess.aspx"
+        }
+      ]
+    },
+    {
+      "titre": "Comment je récupère mon bulletin de salaire ?",
+      "etape": "Premier mois",
+      "theme": "Ressources humaines (RH)",
+      "interlocuteurs": [],
+      "ressources": [
+        {
+          "titre": "Ma fiche de paie",
+          "description": "Site de l'ENSAP",
+          "type": "Lien vers internet",
+          "url": "https://ensap.gouv.fr/web/accueilnonconnecte"
+        }
+      ]
+    },
+    {
+      "titre": "Comment comprendre mon bulletin de salaire ? Qui peut m'aider ?",
+      "etape": "Premier mois",
+      "theme": "Ressources humaines (RH)",
+      "interlocuteurs": [],
+      "ressources": [
+        {
+          "titre": "Lire et comprendre sa fiche de paie",
+          "description": "Lire et comprendre sa fiche de paie",
+          "type": "Lien vers APHP-PRO",
+          "url": "https://aphp-pro.aphp.fr/HAD/Flash%20RH%20%20HAD/2026"
+        }
+      ]
+    },
+    {
+      "titre": "À quelle date suis-je payé ?",
+      "etape": "Premier mois",
+      "theme": "Ressources humaines (RH)",
+      "interlocuteurs": [],
+      "ressources": []
+    },
+    {
+      "titre": "Comment faire ma visite médicale ?",
+      "etape": "Premier mois",
+      "theme": "Ressources humaines (RH)",
+      "interlocuteurs": [],
+      "ressources": [
+        {
+          "titre": "Visite médicale",
+          "description": "Modalités de la visite médicale avant l'entrée en fonction et visite médicale périodique",
+          "type": "Lien vers APHP-PRO",
+          "url": "https://aphp-pro.aphp.fr/Siege/Visites%20m%C3%A9dicales"
+        }
+      ]
+    },
+    {
+      "titre": "Comment contacter la médecine du travail",
+      "etape": "Premier mois",
+      "theme": "Ressources humaines (RH)",
+      "interlocuteurs": [],
+      "ressources": [
+        {
+          "titre": "Organigramme DRS",
+          "description": "Organigramme de la Direction des Ressources du Siège (dont dépend la Direction des Services Numériques)",
+          "type": "Lien vers APHP-PRO",
+          "url": "https://aphp-pro.aphp.fr/Siege/La%20direction%20des%20ressources%20du%20sige/Organigrammes"
+        },
+        {
+          "titre": "Médecine du Travail",
+          "description": "contacts utiles",
+          "type": "Lien vers APHP-PRO",
+          "url": "https://aphp-pro.aphp.fr/RH/SitePages/priseDePosteEtMedecineDuTravail.aspx?web=1%20"
+        }
+      ]
+    },
+    {
+      "titre": "Comment réaliser mes formations obligatoires sur FormAPHP ?",
+      "etape": "Premier mois",
+      "theme": "Formations",
+      "interlocuteurs": [],
+      "ressources": [
+        {
+          "titre": "Formation cybersécurité",
+          "description": "E-learning SSI - obligatoire",
+          "type": "Lien vers Formaphp",
+          "url": "https://formaphp.fr/course/view.php?id=1148"
+        },
+        {
+          "titre": "Formation RGPD",
+          "description": "E-learning DPO - obligatoire",
+          "type": "Lien vers Formaphp",
+          "url": "https://formaphp.fr/mod/scorm/player.php?a=302&currentorg=articulate_rise&scoid=608"
+        }
+      ]
+    },
+    {
+      "titre": "Comment réaliser mes formations obligatoires sur Remixt ?",
+      "etape": "Premier mois",
+      "theme": "Formations",
+      "interlocuteurs": [],
+      "ressources": [
+        {
+          "titre": "Formations diversité & inclusion",
+          "description": "E-learning ReMixt",
+          "type": "Lien vers ReMixt",
+          "url": "https://dsn-aphp.remixt.fr/fr/login"
+        }
+      ]
+    },
+    {
+      "titre": "Comment découvrir et rencontrer les autres équipes de la DSN ?",
+      "etape": "Premier mois",
+      "theme": "Intégrer la DSN",
+      "interlocuteurs": [],
+      "ressources": []
+    },
+    {
+      "titre": "Comment puis-je contacter les syndicats ?",
+      "etape": "Premier mois",
+      "theme": "Droit du travail",
+      "interlocuteurs": [],
+      "ressources": [
+        {
+          "titre": "CFDT",
+          "description": "Les syndicats de l'APHP",
+          "type": "Lien vers internet",
+          "url": "https://sante-sociaux.cfdt.fr/"
+        },
+        {
+          "titre": "CGT",
+          "description": "Les syndicats de l'APHP",
+          "type": "Lien vers internet",
+          "url": "https://cgt-aphp.fr/qui-sommes-nous/"
+        },
+        {
+          "titre": "SUD SANTE",
+          "description": "Les syndicats de l'APHP",
+          "type": "Lien vers internet",
+          "url": "https://www.sud-sante-aphp.fr/"
+        }
+      ]
+    },
+    {
+      "titre": "Comment contacter mon gestionnaire paie ?",
+      "etape": "Premier mois",
+      "theme": "Ressources humaines (RH)",
+      "interlocuteurs": [],
+      "ressources": [
+        {
+          "titre": "Gestionnaires Paie",
+          "description": "Liste des gestionnaires paie par statut et par noms",
+          "type": "Lien vers intranet",
+          "url": "https://aphp-pro.aphp.fr/Siege/La%20direction%20des%20ressources%20du%20sige/Gestionnaires%20paie"
+        }
+      ]
+    },
+    {
+      "titre": "Comment accéder à Miro ?",
+      "etape": "Premier mois",
+      "theme": "Outils numériques",
+      "interlocuteurs": [],
+      "ressources": []
+    },
+    {
+      "titre": "Comment me repérer dans les équipes Teams ?",
+      "etape": "Premier mois",
+      "theme": "Outils numériques",
+      "interlocuteurs": [],
+      "ressources": [
+        {
+          "titre": "Outil TEAMS groupe",
+          "description": "Chat en groupe",
+          "type": "Lien vers sharepoint",
+          "url": "https://365aphp.sharepoint.com/sites/DSI-Communication2/_layouts/15/stream.aspx?id=3"
+        },
+        {
+          "titre": "Outil TEAMS équipe",
+          "description": "Créer une équipe",
+          "type": "Lien vers sharepoint",
+          "url": "https://365aphp.sharepoint.com/sites/DSI-Communication2/_layouts/15/stream.aspx?id=2"
+        }
+      ]
+    },
+    {
+      "titre": "Comment me repérer dans Sharepoint ?",
+      "etape": "Premier mois",
+      "theme": "Outils numériques",
+      "interlocuteurs": [],
+      "ressources": [
+        {
+          "titre": "Outil SHAREPOINT",
+          "description": "Présentation",
+          "type": "Lien vers sharepoint",
+          "url": "https://365aphp.sharepoint.com/sites/DSI-Communication2/_layouts/15/stream.aspx?id=1"
+        }
+      ]
+    },
+    {
+      "titre": "Comment me repérer dans Dispose ?",
+      "etape": "Premier mois",
+      "theme": "Outils numériques",
+      "interlocuteurs": [],
+      "ressources": [
+        {
+          "titre": "Outil DISPOSE",
+          "description": "Présentation",
+          "type": "Lien vers sharepoint",
+          "url": "https://365aphp.sharepoint.com/sites/DSI-Communication2/_layouts/15/stream.aspx?id=4"
+        },
+        {
+          "titre": "Notice Dispose",
+          "description": "Premiers pas sous l'outil DISPOSE (service sécurisé de partage de fichiers interne et extérieur à l'APHP)",
+          "type": "Lien vers APHP-PRO",
+          "url": "https://aphp-pro.aphp.fr/APHPNord/DSI/Portails%20Applis/Dispose%20Notice-2018-02-01-v7.pdf"
+        }
+      ]
+    },
+    {
+      "titre": "Comment utiliser l'intranet de l'AP-HP ?",
+      "etape": "Premier mois",
+      "theme": "Outils numériques",
+      "interlocuteurs": [],
+      "ressources": [
+        {
+          "titre": "Intranet APHP",
+          "description": "Présentation",
+          "type": "Lien vers APHP-PRO",
+          "url": "https://aphp-pro.aphp.fr/SitePages/TutoMaBoiteAOutils.aspx"
+        }
+      ]
+    },
+    {
+      "titre": "Bien réussir mon entretien de fin de période d'essai",
+      "etape": "Première année",
+      "theme": "Ressources humaines (RH)",
+      "interlocuteurs": [],
+      "ressources": [
+        {
+          "titre": "Evaluation de période d'essai",
+          "description": "Trame d'évaluation de fin de période d'essai",
+          "type": "Lien vers Teams",
+          "url": "https://365aphp.sharepoint.com/sites/DSI-Communication2/_layouts/15/guestaccess.aspx"
+        }
+      ]
+    },
+    {
+      "titre": "Comment accéder à mon compte épargne-temps ?",
+      "etape": "Première année",
+      "theme": "Gestion des congés",
+      "interlocuteurs": [],
+      "ressources": [
+        {
+          "titre": "CET - Compte Epargne Temps",
+          "description": "Compte Epargne Temps",
+          "type": "Lien vers APHP-PRO",
+          "url": "https://aphp-pro.aphp.fr/Cochin/Documents%20partages/Flyer%20CONGES.pdf"
+        }
+      ]
+    },
+    {
+      "titre": "Comment rechercher les applications référencées de l'APHP",
+      "etape": "Première année",
+      "theme": "Outils numériques",
+      "interlocuteurs": [],
+      "ressources": [
+        {
+          "titre": "VISION 360",
+          "description": "Outil de visualisation des applicatifs présents dans le SI + annuaire de contact",
+          "type": "Lien vers internet",
+          "url": "https://vision360.aphp.fr/pages/54f25e1769284125.htm"
+        }
+      ]
+    },
+    {
+      "titre": "Comment accéder à Microsoft Teams ?",
+      "etape": "Première semaine",
+      "theme": "Outils numériques",
+      "interlocuteurs": [],
+      "ressources": [
+        {
+          "titre": "Accès Teams",
+          "description": "Vous pouvez en faire la demande depuis le Portail SMAX (vérifier la présence de Teams dans la fiche d'entrée)",
+          "type": "Lien vers SMAX",
+          "url": "https://smax.aphp.fr/saw/ess"
+        }
+      ]
+    },
+    {
+      "titre": "Comment récupérer mon badge définitif ?",
+      "etape": "Première semaine",
+      "theme": "Ressources humaines (RH)",
+      "interlocuteurs": [],
+      "ressources": [
+        {
+          "titre": "Livret d'accueil",
+          "description": "Document général contenant : Bienvenue / Les différents statuts dans la fonction publique / Les droits et obligations",
+          "type": "Document PDF",
+          "url": "https://aphp-pro.aphp.fr/Siege/La%20direction%20des%20ressources%20du%20sige/Accueil%20des%20nouveaux%20arrivants/Livret"
+        }
+      ]
+    }
+  ]
+}
