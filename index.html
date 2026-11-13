@@ -150,7 +150,7 @@
   }
   function haystack(q) {
     return fold([q.titre, q.theme, (q.interlocuteurs || []).join(' ')].concat(
-      (q.ressources || []).map(function (r) { return r.titre + ' ' + r.description; })).join(' '));
+      (q.ressources || []).map(function (r) { return r.titre; })).join(' '));
   }
 
   function render() {
@@ -179,7 +179,6 @@
           res.forEach(function (r) {
             var url = safeUrl(r.url);
             var inner = '<span class="t">' + highlight(r.titre, terms) + '</span>' +
-              (r.description ? '<span class="d">' + highlight(r.description, terms) + '</span>' : '') +
               (r.type ? '<span class="ty">' + esc(r.type) + '</span>' : '');
             html += url
               ? '<a class="res" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + inner + '</a>'
